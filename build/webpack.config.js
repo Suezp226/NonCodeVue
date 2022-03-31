@@ -24,11 +24,15 @@ module.exports = {
     devServer: {
         hot: true,
         port: 3000,
-        contentBase: './dist',
+        compress: true,
+        // contentBase: './dist',
+        static: {
+            directory: path.join(__dirname, 'dist')
+        }
     },
     resolve: {
         alias: {
-            vue$: 'vue/dist/vue.esm-browser.prod.js'
+            vue$: 'vue/dist/vue.runtime.esm.js'
         }
     },
     module: {
@@ -126,11 +130,11 @@ module.exports = {
         // new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new VueLoaderPlugin(),
-        new webpack.DefinePlugin({
-            'process.env': {
-                VUE_APP_BASE_URL: JSON.stringify('http://localhost:3000')
-            }
-        }),
+        // new webpack.DefinePlugin({
+        //     'process.env': {
+        //         VUE_APP_BASE_URL: JSON.stringify('http://localhost:3000')
+        //     }
+        // }),
     ],
     optimization: {
         moduleIds: 'named'

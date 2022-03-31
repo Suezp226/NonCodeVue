@@ -4,7 +4,8 @@
     "description": "拖拽搭建页面 可 输出vue2.0 代码",
     "main": "index.js",
     "scripts": {
-        "serve": "webpack ./src/main.js --config ./build/webpack.config.js"
+        "serve": "webpack-dev-server --config ./build/webpack.dev.js",
+        "build": "webpack --config ./build/webpack.prod.js"
     },
     "repository": {
         "type": "git",
@@ -17,22 +18,25 @@
     },
     "homepage": "https://github.com/Suezp226/NonCodeVue#readme",
     "devDependencies": {
+        "@intervolga/optimize-cssnano-plugin": "^1.0.6",
         "autoprefixer": "^10.4.4",
         "cache-loader": "^4.1.0",
+        "clean-webpack-plugin": "^4.0.0",
+        "copy-webpack-plugin": "^10.2.4",
         "css-loader": "^6.7.1",
         "dart-sass": "^1.25.0",
         "file-loader": "^6.2.0",
         "html-webpack-plugin": "^5.5.0",
+        "mini-css-extract-plugin": "^2.6.0",
         "postcss-loader": "^6.2.1",
         "sass-loader": "^12.6.0",
         "style-loader": "^3.3.1",
         "thread-loader": "^3.0.4",
         "url-loader": "^4.1.1",
-        "vue-loader": "^17.0.0",
-        "vue-template-compiler": "^2.6.14",
         "webpack": "^5.70.0",
         "webpack-cli": "^4.9.2",
         "webpack-dev-server": "^4.7.4",
+        "webpack-merge": "^5.8.0",
         "wepack": "0.0.1"
     },
     "dependencies": {
@@ -40,6 +44,8 @@
         "@babel/polyfill": "^7.12.1",
         "@babel/preset-env": "^7.16.11",
         "babel-loader": "^8.2.4",
-        "vue": "^3.2.31"
+        "vue": "^2.6.10",
+        "vue-loader": "^15.9.8",
+        "vue-template-compiler": "^2.6.10"
     }
 }
